@@ -1,0 +1,49 @@
+def add():
+    a = int(input("Enter first number: "))
+    b = int(input("Enter second number: "))
+    print("Sum is:", a + b)
+
+def subtract():
+    a = int(input("Enter first number: "))
+    b = int(input("Enter second number: "))
+    print("Difference is:", a - b)
+
+def multiply():
+    a = int(input("Enter first number: "))
+    b = int(input("Enter second number: "))
+    print("Product is:", a * b)
+
+def divide():
+    a = int(input("Enter first number: "))
+    b = int(input("Enter second number: "))
+    if b != 0:
+        print("Quotient is:", a / b)
+    else:
+        print("Error: Cannot divide by zero.")
+
+while True:
+    print("\nWelcome to the calculator!")
+    print("1. Add")
+    print("2. Subtract")
+    print("3. Multiply")
+    print("4. Divide")
+
+    try:
+        choice = int(input("Enter your choice (1-4): "))
+
+        if choice == 1:
+            add()
+            break
+        elif choice == 2:
+            subtract()
+            break
+        elif choice == 3:
+            multiply()
+            break
+        elif choice == 4:
+            divide()
+            break
+        else:
+            print("Invalid choice. Please select a number from 1 to 4.")
+    except ValueError:
+        print("Invalid input. Please enter a number.")
