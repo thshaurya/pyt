@@ -1,0 +1,16 @@
+from PIL import Image
+import os
+
+# === User Settings ===
+input_path = 'image.jpg'     # Your source image
+output_format = 'png'              # Desired format: 'png', 'jpeg', 'webp', etc.
+output_path = f'converted_image.{output_format}'
+
+# === Load and Convert ===
+try:
+    with Image.open(input_path) as img:
+        rgb_img = img.convert('RGB') if output_format.lower() in ['jpeg', 'jpg'] else img
+        rgb_img.save(output_path, output_format.upper())
+        print(f"Image successfully converted to {output_format.upper()} and saved as '{output_path}'")
+except FileNotFoundError:
+    print(f"File not found: {input_path}") 
